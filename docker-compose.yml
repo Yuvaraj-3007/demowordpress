@@ -1,11 +1,9 @@
-version: "3.8"
-
 services:
   wordpress:
     image: wordpress:latest
     restart: always
-    ports:
-      - "80:80"
+    expose:
+      - "80"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: ${DB_USER:-wordpress}
