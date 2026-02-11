@@ -6,9 +6,9 @@ services:
       - "80"
     environment:
       WORDPRESS_DB_HOST: db:3306
-      WORDPRESS_DB_USER: ${DB_USER:-wordpress}
-      WORDPRESS_DB_PASSWORD: ${DB_PASSWORD:-wordpress_secret_2026}
-      WORDPRESS_DB_NAME: ${DB_NAME:-wordpress}
+      WORDPRESS_DB_USER: wordpress
+      WORDPRESS_DB_PASSWORD: Wp_Str0ng_P@ss_2026
+      WORDPRESS_DB_NAME: wordpress
     volumes:
       - wordpress_data:/var/www/html
     depends_on:
@@ -19,10 +19,10 @@ services:
     image: mysql:8.0
     restart: always
     environment:
-      MYSQL_DATABASE: ${DB_NAME:-wordpress}
-      MYSQL_USER: ${DB_USER:-wordpress}
-      MYSQL_PASSWORD: ${DB_PASSWORD:-wordpress_secret_2026}
-      MYSQL_ROOT_PASSWORD: ${DB_ROOT_PASSWORD:-root_secret_2026}
+      MYSQL_DATABASE: wordpress
+      MYSQL_USER: wordpress
+      MYSQL_PASSWORD: Wp_Str0ng_P@ss_2026
+      MYSQL_ROOT_PASSWORD: R00t_Str0ng_P@ss_2026
     volumes:
       - db_data:/var/lib/mysql
     healthcheck:
